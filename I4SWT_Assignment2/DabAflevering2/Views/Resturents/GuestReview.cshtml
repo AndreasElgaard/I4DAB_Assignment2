@@ -1,0 +1,66 @@
+﻿@model DabAflevering2.ViewModels.GuestReviews
+@{
+    ViewData["Title"] = "GuestReview";
+}
+
+<h1>Guest Reviews @Model.guest_reviews.First().Table.Resturent.Name</h1>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Guest
+        </th>
+        <th>
+            Table
+        </th>
+        <th>
+            Dish
+        </th>
+
+        <th>
+            Review
+        </th>
+        <th>
+            Rating
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.guest_reviews)
+        {
+            int count = 0;
+            <tr>
+                
+
+                <td>
+                    @item.Name
+                </td>
+
+                <td>
+                    @item.Table.Number
+
+                </td>
+
+                <td>
+                    @foreach (var variant in item.guestDishes)
+                    {
+                        @Html.Raw(variant.Dish) <br/>
+                    }
+                    
+
+                </td>
+
+                <td>
+                    @item.Review.Text
+                </td>
+                <td>
+                    @item.Review.Stars
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
