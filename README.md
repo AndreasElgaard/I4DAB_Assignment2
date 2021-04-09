@@ -1,6 +1,6 @@
 # System to register restaurant reviews.
 
-Tutorial: 
+Tutorial (In danish): 
 - Åben solutionen "DabAflevering2"
 - Gå ind under StartUp.cs
 - På Linje 46 ændres connectionstring til brugerens personlige MSSQL server, og som database angives der eks. "DabAfl" også oprettes der automatisk en ny database med pågældende navn.
